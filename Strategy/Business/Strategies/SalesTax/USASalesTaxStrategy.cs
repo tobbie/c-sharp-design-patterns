@@ -5,10 +5,6 @@ namespace Strategy.Business.Strategies.SalesTax
 {
     public class USASalesTaxStrategy : ISalesTaxStrategy
     {
-        public USASalesTaxStrategy()
-        {
-        }
-
         public decimal GetTaxFor(Order order)
         {
             switch (order.ShippingDetails.DestinationState.ToLowerInvariant())
