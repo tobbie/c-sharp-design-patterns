@@ -1,0 +1,1 @@
+﻿## Design Patterns in C# - A collection of the Gang Of Four patterns
