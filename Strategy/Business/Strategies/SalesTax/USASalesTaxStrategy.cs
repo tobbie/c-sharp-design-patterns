@@ -11,7 +11,8 @@ namespace Strategy.Business.Strategies.SalesTax
             {
                 case "la": return order.TotalPrice * 0.095m;
                 case "ny": return order.TotalPrice * 0.04m;
-                case "nyc": return order.TotalPrice * 0.045m;
+                case "nyc": return order.TotalPrice
+                        * 0.045m;
                 default: return 0m;
             }
         }
