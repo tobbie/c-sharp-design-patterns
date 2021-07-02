@@ -9,8 +9,12 @@
     <Folder Include="Business\Strategies\" />
     <Folder Include="Business\Strategies\SalesTax\" />
     <Folder Include="Business\Strategies\Invoice\" />
+    <Folder Include="Business\Strategies\Shipping\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Business\Strategies\Shipping\" />
   </ItemGroup>
 </Project>

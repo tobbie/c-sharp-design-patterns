@@ -21,7 +21,7 @@ namespace Strategy.Business.Strategies.Invoice
 
             invoice += Environment.NewLine + Environment.NewLine;
 
-            var tax = order.GetTax(new SwedenSalesTaxStrategy());
+            var tax = order.GetTax(order.SalesTaxStrategy);
             var total = order.TotalPrice + tax;
 
             invoice += $"TAX TOTAL: {tax}{Environment.NewLine}";
