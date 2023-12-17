@@ -1,6 +1,5 @@
 ﻿## Design Patterns in C# - A collection of the Gang Of Four patterns (WIP)
 
-## Problems are sourced from pluralsight
 
 The project is a group of class libraries that contain creational, behavioral and structural design patterns 
 ### Creational patterns you will find include:
