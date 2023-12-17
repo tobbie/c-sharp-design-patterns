@@ -1,17 +1,14 @@
 ﻿## Design Patterns in C# - A collection of the Gang Of Four patterns (WIP)
-
-
 The project is a group of class libraries that contain creational, behavioral and structural design patterns 
-### Creational patterns you will find include:
 
+### Creational patterns 
 	* Prototype
 	* Singleton
 	* Factory Method
 	* Abstract Factory
 	* Builder
 
-### Structural patterns you will find include:
-
+### Structural patterns 
 	* Adapter
 	* Bridge
 	* Composite
@@ -20,7 +17,7 @@ The project is a group of class libraries that contain creational, behavioral an
 	* Flyweight
 	* Proxy
 
-### Behavioural patterns you will find include:
+### Behavioural patterns
 
 	* Strategy
 	* Command
