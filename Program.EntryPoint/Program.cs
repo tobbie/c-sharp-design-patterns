@@ -28,6 +28,14 @@ namespace Program.EntryPoint
 
             savedOrder.Debug();
             clonedOrder.Debug();
+
+            PrototypeManager manager = new PrototypeManager();
+            manager["2/3/2023"] = new FoodOrder("Steve", false, new string[] { "Peppersoup", "Beetroot Juice" }, 
+                                        new OrderInfo(8839));
+
+            WriteLine("Manager clone");
+            FoodOrder managerClone = (FoodOrder)manager["2/3/2023"].DeepCopy();
+            managerClone.Debug(); 
            
         }
     }
