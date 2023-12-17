@@ -1,5 +1,6 @@
 ﻿using static System.Console;
 using CreationalPatterns.Prototype;
+using CreationalPatterns.Singleton;
 
 namespace Program.EntryPoint
 {
@@ -7,7 +8,9 @@ namespace Program.EntryPoint
     {
         static void Main(string[] args)
         {
-            RunPrototype();
+            // RunPrototype();
+            // RunNaiveSingleton();
+            RunProperSingleton();
         }
 
         static void RunPrototype()
@@ -37,6 +40,26 @@ namespace Program.EntryPoint
             FoodOrder managerClone = (FoodOrder)manager["2/3/2023"].DeepCopy();
             managerClone.Debug(); 
            
+        }
+
+        static void RunNaiveSingleton()
+        {
+            var one = NaiveSingleton.Instance;
+            var two = NaiveSingleton.Instance;
+            var three = NaiveSingleton.Instance;
+
+            WriteLine($"singleton one is the same as singleton two? {one.Equals(two)}");
+            WriteLine($"singleton two is the same as singleton three? {two.Equals(three)}");
+        }
+
+        static void RunProperSingleton()
+        {
+            var one = Singleton.Instance;
+            var two = Singleton.Instance;
+            var three = Singleton.Instance;
+
+            WriteLine($"singleton one is the same as singleton two? {one.Equals(two)}");
+            WriteLine($"singleton two is the same as singleton three? {two.Equals(three)}");
         }
     }
 }

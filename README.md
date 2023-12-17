@@ -31,7 +31,6 @@ The project is a group of class libraries that contain creational, behavioral an
 	* Memento
 
 
-
 To get started, clone the repo, build the project, then run the console application named Program.EntryPoint. 
 Here you'll find methods which you can uncomment to test out the pattern.
 
