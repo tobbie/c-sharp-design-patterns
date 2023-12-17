@@ -1,4 +1,6 @@
-﻿## Design Patterns in C# - A collection of the Gang Of Four patterns (WIP)
+﻿[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Ftobbie%2Fc-sharp-design-patterns&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=views&edge_flat=false)](https://hits.seeyoufarm.com)
+
+## Design Patterns in C# - A collection of the Gang Of Four patterns (WIP)
 The project is a group of class libraries that contain creational, behavioral and structural design patterns 
 
 ### Creational patterns 
