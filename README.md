@@ -41,6 +41,10 @@ Here you'll find methods which you can uncomment to test out the pattern.
 
 This solution requires `.NET 6` to run. Happy coding! :)
 
+### To learn more about software design patterns
+Please visit [the design pattern catalog here](https://refactoring.guru/design-patterns/catalog)
+
 
 ### To contribute
-Please visit 
+Please visit [the contribution guide](https://github.com/tobbie/c-sharp-design-patterns/blob/main/CONTRIBUTING.md)
+
