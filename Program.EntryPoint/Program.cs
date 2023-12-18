@@ -1,6 +1,12 @@
 ﻿using static System.Console;
 using CreationalPatterns.Prototype;
 using CreationalPatterns.Singleton;
+using StructuralPatterns.Facade.BallOfMud;
+using System.Data;
+using StructuralPatterns.Facade.WorkerFacade.Entities;
+using StructuralPatterns.Facade.WorkerFacade;
+using StructuralPatterns.Facade.WorkerFacade.Services;
+
 
 namespace Program.EntryPoint
 {
@@ -10,7 +16,11 @@ namespace Program.EntryPoint
         {
             // RunPrototype();
             // RunNaiveSingleton();
-            RunProperSingleton();
+            //RunProperSingleton();
+            //RunBigClass();
+         //   RunBigClassFacade();
+          //  RunWeatherFacade();
+            RunWeatherServicesWithoutFacade();
         }
 
         static void RunPrototype()
@@ -60,6 +70,75 @@ namespace Program.EntryPoint
 
             WriteLine($"singleton one is the same as singleton two? {one.Equals(two)}");
             WriteLine($"singleton two is the same as singleton three? {two.Equals(three)}");
+        }
+
+        public static void RunBigClass()
+        {
+            var bigClass = new BigClass();
+            bigClass.SetValueI(3);
+
+            bigClass.IncrementI();
+            bigClass.IncrementI();
+            bigClass.IncrementI();
+
+            bigClass.DecrememntI();
+            WriteLine($"------------------Testing Bigclass-----------\n");
+
+            WriteLine($"Final number is {bigClass.GetValueA()}");
+
+
+        }
+
+        public static void RunBigClassFacade()
+        {
+           var bigClassFacade = new  BigClassFacade();
+            bigClassFacade.IncreaseBy(numberToAdd:50);
+            bigClassFacade.DecreaseBy(numberToSubtract:20);
+            
+            WriteLine($"------------------Testing Bigclass Facade-----------\n");
+            WriteLine($"Final number is {bigClassFacade.GetCurrentValue()}");
+
+        }
+
+        public static void RunWeatherFacade()
+        {
+            WriteLine($"------------------Testing Weather Facade-----------\n");
+            const string zipCode = "98074";
+
+            IWeatherFacade weatherFacade = new WeatherFacade();
+            WeatherFacadeResults results = weatherFacade.GetTempInCity(zipCode);
+
+            WriteLine("The current temperature is {0}F/{1}C in {2}, {3}",
+                                results.Fahrenheit,
+                                results.Celsius,
+                                results.City.Name,
+                                results.State.Name);
+        }
+
+        public static void RunWeatherServicesWithoutFacade()
+        {
+            const string zipCode = "98074";
+
+            // call to service 1
+            GeoLookupService geoLookupService = new GeoLookupService();
+            City city = geoLookupService.GetCityForZipCode(zipCode);
+            State state = geoLookupService.GetStateForZipCode(zipCode);
+
+            // call to service 2
+            WeatherService weatherService = new WeatherService();
+            int fahrenheit = weatherService.GetTempFahrenheit(city, state);
+
+            // call to service 3
+            ConverterService metricConverter = new ConverterService();
+            int celcius = metricConverter.ConvertFahrenheitToCelsius(fahrenheit);
+
+            WriteLine($"------------------Testing Weather service without facade-----------\n");
+            // bring the result of all service calls together
+            WriteLine("The current temperature is {0} F / {1} C in {2}, {3}",
+                                fahrenheit,
+                                celcius,
+                                city.Name,
+                                state.Name);
         }
     }
 }

@@ -8,7 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BehaviouralPatterns\BehaviouralPatterns.csproj" />
     <ProjectReference Include="..\CreationalPatterns\CreationalPatterns.csproj" />
+    <ProjectReference Include="..\StructuralPatterns\StructuralPatterns.csproj" />
   </ItemGroup>
 
 </Project>
